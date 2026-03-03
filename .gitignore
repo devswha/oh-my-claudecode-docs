@@ -4,3 +4,6 @@ package.json
 generate-thumbnail.js
 social-preview.html
 social-preview-1x.png
+.omc/
+.sisyphus/
+.omx/

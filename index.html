@@ -2008,18 +2008,26 @@
 
       <article class="feature-card" data-reveal="fade-up" data-reveal-delay="300">
         <div class="feature-card__icon">
-          <svg width="24" height="24"><use href="#icon-cpu"></use></svg>
+          <svg width="24" height="24"><use href="#icon-message-circle"></use></svg>
         </div>
-        <h3 class="feature-card__title">Ultrapilot</h3>
-        <p class="feature-card__description">Parallel autopilot with file ownership tracking. 3-5x faster than sequential execution.</p>
+        <h3 class="feature-card__title">Deep Interview</h3>
+        <p class="feature-card__description">Socratic questioning to clarify vague ideas before execution. Exposes hidden assumptions and measures clarity.</p>
       </article>
 
-      <article class="feature-card" data-reveal="fade-up" data-reveal-delay="400">
+      <article class="feature-card feature-card--deprecated" data-reveal="fade-up" data-reveal-delay="400">
+        <div class="feature-card__icon">
+          <svg width="24" height="24"><use href="#icon-cpu"></use></svg>
+        </div>
+        <h3 class="feature-card__title">Ultrapilot <span class="deprecated-badge">Deprecated</span></h3>
+        <p class="feature-card__description">Use <strong>Team</strong> mode instead: <code>/team N:deep-executor "task"</code></p>
+      </article>
+
+      <article class="feature-card feature-card--deprecated" data-reveal="fade-up" data-reveal-delay="450">
         <div class="feature-card__icon">
           <svg width="24" height="24"><use href="#icon-grid"></use></svg>
         </div>
-        <h3 class="feature-card__title">Swarm</h3>
-        <p class="feature-card__description">N coordinated agents working on a shared task list. True collaborative multi-agent execution.</p>
+        <h3 class="feature-card__title">Swarm <span class="deprecated-badge">Deprecated</span></h3>
+        <p class="feature-card__description">Use <strong>Team</strong> mode instead: <code>/team N:executor "task"</code></p>
       </article>
 
       <article class="feature-card" data-reveal="fade-up" data-reveal-delay="450">
@@ -2153,13 +2161,18 @@
             <td>"eco fix all linting errors"</td>
           </tr>
           <tr>
-            <td><code>swarm</code></td>
-            <td>Coordinated multi-agent</td>
-            <td>"swarm: implement all features"</td>
+            <td><code>deep-interview</code></td>
+            <td>Socratic requirements clarification</td>
+            <td>"/deep-interview 'vague idea'"</td>
           </tr>
           <tr>
             <td><code>team</code></td>
-            <td>Coordinated native teams</td>
+            <td>Coordinated native teams (replaces swarm/ultrapilot)</td>
+            <td>"team 5:executor fix all errors"</td>
+          </tr>
+          <tr class="deprecated-row">
+            <td><code>swarm</code> <span class="deprecated-badge">Deprecated</span></td>
+            <td>Use <code>team</code> instead</td>
             <td>"team 5:executor fix all errors"</td>
           </tr>
         </tbody>

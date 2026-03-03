@@ -526,8 +526,8 @@
             <button class="collapsible-toggle">Advanced Modes <span>▾</span></button>
             <div class="submenu">
               <a href="#team" class="sidebar-link" data-section="team">Team</a>
-              <a href="#ultrapilot" class="sidebar-link" data-section="ultrapilot">Ultrapilot</a>
-              <a href="#swarm" class="sidebar-link" data-section="swarm">Swarm</a>
+              <a href="#ultrapilot" class="sidebar-link sidebar-link--deprecated" data-section="ultrapilot">Ultrapilot (Deprecated)</a>
+              <a href="#swarm" class="sidebar-link sidebar-link--deprecated" data-section="swarm">Swarm (Deprecated)</a>
               <a href="#pipeline" class="sidebar-link" data-section="pipeline">Pipeline</a>
               <a href="#ultraqa" class="sidebar-link" data-section="ultraqa">UltraQA</a>
               <a href="#plan" class="sidebar-link" data-section="plan">Plan</a>
@@ -737,6 +737,12 @@
           <p>OMC uses "Magic Keywords" to detect your intent. Just describe what you want to do.</p>
 
           <ul class="quick-start-steps">
+            <li>
+              <div class="qs-content">
+                <h4>Uncertain About Requirements?</h4>
+                <p><code>"/deep-interview 'I want to build a task manager'"</code> &mdash; Socratic questioning to clarify vague ideas before execution.</p>
+              </div>
+            </li>
             <li>
               <div class="qs-content">
                 <h4>Autonomous Building</h4>
