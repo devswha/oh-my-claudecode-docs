@@ -19,6 +19,7 @@
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: hoverGlow 2s ease-in-out infinite;
 }
 
 .card::after {

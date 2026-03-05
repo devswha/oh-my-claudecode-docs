@@ -153,6 +153,19 @@
   }
 }
 
+/* Hover Glow */
+@keyframes hoverGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(var(--accent-color-rgb), 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(var(--accent-color-rgb), 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(var(--accent-color-rgb), 0.2);
+  }
+}
+
 /* Fade Out */
 @keyframes fadeOut {
   from {
@@ -297,6 +310,11 @@
 [data-reveal="stagger"].revealed > *:nth-child(8) { transition-delay: 0.7s; }
 [data-reveal="stagger"].revealed > *:nth-child(9) { transition-delay: 0.8s; }
 [data-reveal="stagger"].revealed > *:nth-child(10) { transition-delay: 0.9s; }
+[data-reveal="stagger"].revealed > *:nth-child(11) { transition-delay: 1.0s; }
+[data-reveal="stagger"].revealed > *:nth-child(12) { transition-delay: 1.1s; }
+[data-reveal="stagger"].revealed > *:nth-child(13) { transition-delay: 1.2s; }
+[data-reveal="stagger"].revealed > *:nth-child(14) { transition-delay: 1.3s; }
+[data-reveal="stagger"].revealed > *:nth-child(15) { transition-delay: 1.4s; }
 
 [data-reveal="stagger"].revealed > * {
   opacity: 1;
@@ -413,6 +431,15 @@
 /* Glow effect for accent elements */
 .glow-accent {
   animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Hover Glow class */
+.hover-glow {
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.hover-glow:hover {
+  animation: hoverGlow 2s ease-in-out infinite;
 }
 
 /* Float animation for decorative elements */

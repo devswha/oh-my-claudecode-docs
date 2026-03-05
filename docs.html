@@ -665,6 +665,15 @@
           <a href="#notify-reply" class="sidebar-link" data-section="notify-reply">Reply Injection</a>
         </div>
 
+        <!-- Guides -->
+        <div class="sidebar-section">
+          <div class="sidebar-title">Guides</div>
+          <a href="#getting-started" class="sidebar-link" data-section="getting-started">Getting Started</a>
+          <a href="#execution-modes-guide" class="sidebar-link" data-section="execution-modes-guide">Execution Modes</a>
+          <a href="#model-routing-guide" class="sidebar-link" data-section="model-routing-guide">Model Routing</a>
+          <a href="#troubleshooting" class="sidebar-link" data-section="troubleshooting">Troubleshooting</a>
+        </div>
+
         <!-- Workflows -->
         <div class="sidebar-section">
           <div class="sidebar-title">Workflows</div>
@@ -1714,6 +1723,221 @@ omc hud --watch --interval 1000</code></pre>
           <div class="callout info">
             <div class="callout-title">Good to know</div>
             <p>These four patterns cover most real-world work. Other skills exist for specific tasks, but you rarely need them day-to-day.</p>
+          </div>
+        </section>
+
+        <!-- Getting Started Guide -->
+        <section id="getting-started" data-section>
+          <h2><span class="anchor-link">#</span>Getting Started</h2>
+          <p>This guide walks you through installing OMC, running the setup wizard, and executing your first command.</p>
+
+          <h3>Installation</h3>
+          <p>Install OMC with a single command:</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>curl -fsSL https://raw.githubusercontent.com/yeachan-heo/oh-my-claudecode/main/install.sh | bash</code></pre>
+          </div>
+
+          <h3>First Setup</h3>
+          <p>Once installed, open Claude Code and run the setup wizard. This configures hooks, agents, skills, and MCP tools.</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>/omc-setup</code></pre>
+          </div>
+
+          <h3>Your First Command</h3>
+          <p>Try a simple autopilot command to see OMC in action. Autopilot detects your intent, plans the work, executes it, and verifies the result.</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>autopilot build a hello world REST API</code></pre>
+          </div>
+
+          <h3>Verify Your Installation</h3>
+          <p>Run the diagnostic tool to confirm everything is set up correctly. It checks hooks, MCP tools, agent availability, and configuration.</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>/omc-doctor</code></pre>
+          </div>
+
+          <div class="mode-card">
+            <div class="mode-card__header">
+              <div class="mode-card__icon">&#x1F4A1;</div>
+              <div>
+                <h3 class="mode-card__title">Tip</h3>
+              </div>
+            </div>
+            <p class="mode-card__description">If <code>/omc-doctor</code> reports any issues, follow the suggestions it prints. Most problems are resolved by re-running <code>/omc-setup</code> or installing missing dependencies.</p>
+          </div>
+        </section>
+
+        <!-- Execution Modes Guide -->
+        <section id="execution-modes-guide" data-section>
+          <h2><span class="anchor-link">#</span>Execution Modes Guide</h2>
+          <p>OMC provides several execution modes, each optimized for different types of work. Choose the mode that best fits your task.</p>
+
+          <h3>Autopilot</h3>
+          <p>Full autonomous execution. Autopilot detects your intent, expands requirements with an Analyst and Architect, plans the work, executes with Ralph and Ultrawork, and verifies the result with UltraQA. This is the flagship mode for greenfield features and "build me X" requests.</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>autopilot build a user auth system with JWT</code></pre>
+          </div>
+          <p><strong>When to use:</strong> Greenfield features, new projects, "build me X" requests where you want end-to-end autonomous execution.</p>
+
+          <h3>Ralph</h3>
+          <p>Self-referential persistence loop. Ralph keeps working until the task is verified complete by the Architect. It automatically includes Ultrawork for parallelism. The motto is "The boulder never stops" -- Ralph will iterate, fix failures, and re-verify until the goal is met.</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>ralph refactor the entire API layer</code></pre>
+          </div>
+          <p><strong>When to use:</strong> Complex multi-step tasks that need iteration, refactors that touch many files, tasks where you want guaranteed completion.</p>
+
+          <h3>Ultrawork</h3>
+          <p>Maximum parallelism. Ultrawork aggressively delegates subtasks to multiple background agents running concurrently (up to 5+ agents). It uses smart model routing to assign the right model tier to each subtask.</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>ulw fix all 5 failing tests</code></pre>
+          </div>
+          <p><strong>When to use:</strong> Batch operations, multiple independent fixes, any work that can be split into parallel subtasks.</p>
+
+          <h3>Team</h3>
+          <p>N coordinated Claude agents with a shared task list. Team mode follows a stage-aware pipeline: plan, PRD, exec, verify, fix. Each stage routes to the appropriate specialist agents. Teams support composition with Ralph for persistent execution (<code>team ralph</code>).</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>team 3:executor build the dashboard</code></pre>
+          </div>
+          <p><strong>When to use:</strong> Large features requiring multiple specialists, projects that benefit from coordinated parallel agents with quality gates.</p>
+
+          <h3>Plan</h3>
+          <p>Strategic planning with optional interview workflow. Plan mode analyzes your request and produces a structured execution plan. Use <code>--consensus</code> for iterative planning with Planner, Architect, and Critic until they agree. Use <code>--deliberate</code> for high-risk work with pre-mortem analysis.</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>plan the database migration strategy</code></pre>
+          </div>
+          <p><strong>When to use:</strong> Architecture decisions, migration planning, any task where upfront planning reduces rework.</p>
+
+          <h3>UltraQA</h3>
+          <p>QA cycling -- test, verify, fix, repeat. UltraQA runs end-to-end tests, verifies results, fixes failures, and repeats until all tests pass. It is typically activated by Autopilot after implementation, but can be triggered independently.</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>/ultraqa</code></pre>
+          </div>
+          <p><strong>When to use:</strong> Ensuring quality after implementation, running comprehensive test suites, validating that all acceptance criteria are met.</p>
+        </section>
+
+        <!-- Model Routing Guide -->
+        <section id="model-routing-guide" data-section>
+          <h2><span class="anchor-link">#</span>Model Routing Guide</h2>
+          <p>OMC intelligently routes each agent to the most appropriate model tier. This balances cost, speed, and capability so that simple tasks use fast lightweight models while complex tasks get the full power of Opus.</p>
+
+          <h3>The Three Tiers</h3>
+          <ul>
+            <li><strong>Haiku</strong> -- Fast and cheap. Used for quick lookups, codebase exploration, simple documentation, and formatting tasks.</li>
+            <li><strong>Sonnet</strong> -- The workhorse. Used for standard implementation, code reviews, test writing, refactoring, and most day-to-day agent work.</li>
+            <li><strong>Opus</strong> -- Maximum capability. Used for architecture design, deep analysis, complex autonomous work, and critical decision-making.</li>
+          </ul>
+
+          <h3>Agent-to-Model Mapping</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Tier</th><th>Agents</th><th>Typical Tasks</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Haiku</strong></td>
+                  <td><code>explore</code>, <code>writer</code></td>
+                  <td>File discovery, symbol mapping, documentation generation</td>
+                </tr>
+                <tr>
+                  <td><strong>Sonnet</strong></td>
+                  <td><code>executor</code>, <code>debugger</code>, <code>verifier</code>, <code>test-engineer</code>, <code>build-fixer</code>, <code>designer</code>, <code>qa-tester</code>, <code>scientist</code>, <code>document-specialist</code>, <code>git-master</code>, <code>quality-reviewer</code>, <code>security-reviewer</code></td>
+                  <td>Implementation, testing, reviews, debugging, domain work</td>
+                </tr>
+                <tr>
+                  <td><strong>Opus</strong></td>
+                  <td><code>analyst</code>, <code>planner</code>, <code>architect</code>, <code>deep-executor</code>, <code>code-reviewer</code>, <code>critic</code>, <code>code-simplifier</code></td>
+                  <td>Architecture, planning, deep analysis, critical reviews</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Overriding Model Routing</h3>
+          <p>You can override the default model tier for any agent by passing the <code>model</code> parameter on Task calls. This is useful when you want a higher-quality result for a normally-Sonnet agent, or a faster result for a normally-Opus agent.</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code># Use Opus for an executor task that needs extra reasoning
+Task(subagent_type="oh-my-claudecode:executor", model="opus", ...)
+
+# Use Haiku for a quick verification check
+Task(subagent_type="oh-my-claudecode:verifier", model="haiku", ...)</code></pre>
+          </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section id="troubleshooting" data-section>
+          <h2><span class="anchor-link">#</span>Troubleshooting</h2>
+          <p>Common issues and how to resolve them.</p>
+
+          <h3>"not inside tmux"</h3>
+          <p>OMC team and worker features require a tmux session. Start one before launching OMC:</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code>tmux new -s dev</code></pre>
+          </div>
+
+          <h3>"codex/gemini: command not found"</h3>
+          <p>The Codex and Gemini CLI tools must be installed globally for multi-model features to work:</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code># Install Codex CLI
+npm install -g @openai/codex
+
+# Install Gemini CLI
+npm install -g @google/gemini-cli</code></pre>
+          </div>
+
+          <h3>State Conflicts</h3>
+          <p>If modes get stuck or state files become inconsistent, clear them with the cancel command or the state_clear tool:</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code># Clear all active mode state
+/cancel --force
+
+# Or clear a specific mode's state
+state_clear</code></pre>
+          </div>
+
+          <h3>Agent Not Responding</h3>
+          <p>If an agent appears stuck or is not producing output, check the trace timeline for details and restart:</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code># Check the agent flow trace for issues
+/trace
+
+# Cancel and restart the current mode
+/cancel</code></pre>
+          </div>
+
+          <h3>Hook Errors</h3>
+          <p>If hooks are firing incorrectly or causing errors, check the skip list and run diagnostics:</p>
+          <div class="code-block-wrapper">
+            <div class="code-block-header"><span class="code-lang">BASH</span></div>
+            <pre><code># Check which hooks are being skipped
+echo $OMC_SKIP_HOOKS
+
+# Run the full diagnostic check
+/omc-doctor</code></pre>
+          </div>
+
+          <div class="mode-card">
+            <div class="mode-card__header">
+              <div class="mode-card__icon">&#x1F4A1;</div>
+              <div>
+                <h3 class="mode-card__title">Tip</h3>
+              </div>
+            </div>
+            <p class="mode-card__description">Set <code>DISABLE_OMC=1</code> to temporarily disable all OMC hooks if you need to rule out hook-related issues. Set <code>OMC_SKIP_HOOKS</code> to a comma-separated list of hook names to skip specific hooks.</p>
           </div>
         </section>
 
