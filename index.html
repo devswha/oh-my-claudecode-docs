@@ -1685,6 +1685,197 @@
   </style>
 </head>
 <body>
+  <!-- Section transition divider wave (CSS generated) -->
+  <style>
+    /* Section separator accents */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(220, 38, 38, 0.3) 20%,
+        rgba(220, 38, 38, 0.5) 50%,
+        rgba(220, 38, 38, 0.3) 80%,
+        transparent 100%
+      );
+      margin: 0;
+      border: none;
+    }
+
+    .section-divider--glow {
+      height: 2px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(220, 38, 38, 0.1) 10%,
+        rgba(220, 38, 38, 0.6) 50%,
+        rgba(220, 38, 38, 0.1) 90%,
+        transparent 100%
+      );
+      box-shadow: 0 1px 20px rgba(220, 38, 38, 0.3);
+    }
+
+    /* Enhanced section spacing with rhythm */
+    .section + .section {
+      position: relative;
+    }
+
+    .section + .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+      );
+    }
+
+    /* Enhanced card hover states */
+    .feature-card, .doc-card, .tier-card, .whats-new-card, .ai-feature-card, .mcp-card {
+      position: relative;
+    }
+
+    .feature-card::after, .doc-card::after, .tier-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.1),
+        transparent 50%,
+        rgba(255, 255, 255, 0.05)
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    @media (hover: hover) {
+      .feature-card:hover::after, .doc-card:hover::after, .tier-card:hover::after {
+        opacity: 1;
+      }
+    }
+
+    /* Enhanced typography hierarchy */
+    .section__title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section__title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+      border-radius: 2px;
+    }
+
+    /* Smooth scroll padding for anchor links */
+    html {
+      scroll-padding-top: 100px;
+    }
+
+    /* Enhanced focus states */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+
+    /* Improved section spacing rhythm */
+    .section {
+      padding: 7rem 1.5rem;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 5rem 1rem;
+      }
+    }
+
+    /* Enhanced hero spacing */
+    .hero {
+      padding: calc(100px + 4rem) 2rem 6rem;
+    }
+
+    /* Improved grid spacing for feature cards */
+    .features-grid {
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 1200px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Enhanced doc cards grid */
+    .docs-grid {
+      gap: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      .docs-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Improved agent tier cards spacing */
+    .tier-card {
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+
+    .tier-card__agents {
+      gap: 0.625rem;
+    }
+
+    /* Better whats-new card spacing */
+    .whats-new-card {
+      padding: 1.5rem;
+      gap: 1.25rem;
+    }
+
+    /* Enhanced MCP cards */
+    .mcp-card {
+      padding: 2rem;
+      border-radius: 16px;
+    }
+
+    /* AI feature cards enhancement */
+    .ai-feature-card {
+      padding: 2rem;
+    }
+
+    /* Loading state shimmer for dynamic content */
+    @keyframes contentShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .loading-shimmer {
+      background: linear-gradient(90deg,
+        var(--bg-tertiary) 25%,
+        rgba(220, 38, 38, 0.1) 50%,
+        var(--bg-tertiary) 75%
+      );
+      background-size: 200% 100%;
+      animation: contentShimmer 1.5s infinite;
+    }
+  </style>
+
   <!-- SVG Icon Sprite -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1988,6 +2179,8 @@
   </div>
 </section>
 
+<hr class="section-divider section-divider--glow" aria-hidden="true">
+
 <!-- Multi-AI Integration Section -->
 <section id="multi-ai" class="section multi-ai-section" aria-labelledby="multi-ai-title">
   <div class="section__header" data-reveal="fade-up">
@@ -2084,6 +2277,8 @@
   </div>
 </section>
 
+<hr class="section-divider" aria-hidden="true">
+
   <!-- Installation Section -->
   <section id="installation" class="section install-section" aria-labelledby="install-title">
     <div class="section__header" data-reveal="fade-up">
@@ -2131,6 +2326,8 @@
       </div>
     </div>
   </section>
+
+<hr class="section-divider section-divider--glow" aria-hidden="true">
 
   <!-- Features Section -->
   <section id="features" class="section features-section" aria-labelledby="features-title">
@@ -2247,6 +2444,8 @@
   </div>
 </section>
 
+<hr class="section-divider" aria-hidden="true">
+
   <!-- Magic Keywords Section -->
   <section class="section keywords-section" aria-labelledby="keywords-title">
     <div class="section__header" data-reveal="fade-up">
@@ -2308,6 +2507,8 @@
       </table>
     </div>
   </section>
+
+<hr class="section-divider section-divider--glow" aria-hidden="true">
 
   <!-- Agent Lanes Section -->
   <section id="agents" class="section agents-section" aria-labelledby="agents-title">
@@ -2376,6 +2577,8 @@
       Plus <strong>Coordination</strong> agent: <code>critic</code> for plan challenges and critical review.
     </p>
   </section>
+
+<hr class="section-divider" aria-hidden="true">
 
   <!-- Zero Learning Curve Section -->
   <section class="section zero-curve-section" aria-labelledby="zero-curve-title">
