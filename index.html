@@ -1685,197 +1685,6 @@
   </style>
 </head>
 <body>
-  <!-- Section transition divider wave (CSS generated) -->
-  <style>
-    /* Section separator accents */
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(220, 38, 38, 0.3) 20%,
-        rgba(220, 38, 38, 0.5) 50%,
-        rgba(220, 38, 38, 0.3) 80%,
-        transparent 100%
-      );
-      margin: 0;
-      border: none;
-    }
-
-    .section-divider--glow {
-      height: 2px;
-      background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(220, 38, 38, 0.1) 10%,
-        rgba(220, 38, 38, 0.6) 50%,
-        rgba(220, 38, 38, 0.1) 90%,
-        transparent 100%
-      );
-      box-shadow: 0 1px 20px rgba(220, 38, 38, 0.3);
-    }
-
-    /* Enhanced section spacing with rhythm */
-    .section + .section {
-      position: relative;
-    }
-
-    .section + .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: 1px;
-      background: linear-gradient(90deg,
-        transparent,
-        rgba(255, 255, 255, 0.05),
-        transparent
-      );
-    }
-
-    /* Enhanced card hover states */
-    .feature-card, .doc-card, .tier-card, .whats-new-card, .ai-feature-card, .mcp-card {
-      position: relative;
-    }
-
-    .feature-card::after, .doc-card::after, .tier-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg,
-        rgba(255, 255, 255, 0.1),
-        transparent 50%,
-        rgba(255, 255, 255, 0.05)
-      );
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    @media (hover: hover) {
-      .feature-card:hover::after, .doc-card:hover::after, .tier-card:hover::after {
-        opacity: 1;
-      }
-    }
-
-    /* Enhanced typography hierarchy */
-    .section__title {
-      position: relative;
-      display: inline-block;
-    }
-
-    .section__title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-      border-radius: 2px;
-    }
-
-    /* Smooth scroll padding for anchor links */
-    html {
-      scroll-padding-top: 100px;
-    }
-
-    /* Enhanced focus states */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--accent-color);
-      outline-offset: 2px;
-    }
-
-    /* Improved section spacing rhythm */
-    .section {
-      padding: 7rem 1.5rem;
-      position: relative;
-    }
-
-    @media (max-width: 768px) {
-      .section {
-        padding: 5rem 1rem;
-      }
-    }
-
-    /* Enhanced hero spacing */
-    .hero {
-      padding: calc(100px + 4rem) 2rem 6rem;
-    }
-
-    /* Improved grid spacing for feature cards */
-    .features-grid {
-      gap: 2.5rem;
-    }
-
-    @media (min-width: 1200px) {
-      .features-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    /* Enhanced doc cards grid */
-    .docs-grid {
-      gap: 2rem;
-    }
-
-    @media (min-width: 1024px) {
-      .docs-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    /* Improved agent tier cards spacing */
-    .tier-card {
-      padding: 2.5rem;
-      border-radius: 20px;
-    }
-
-    .tier-card__agents {
-      gap: 0.625rem;
-    }
-
-    /* Better whats-new card spacing */
-    .whats-new-card {
-      padding: 1.5rem;
-      gap: 1.25rem;
-    }
-
-    /* Enhanced MCP cards */
-    .mcp-card {
-      padding: 2rem;
-      border-radius: 16px;
-    }
-
-    /* AI feature cards enhancement */
-    .ai-feature-card {
-      padding: 2rem;
-    }
-
-    /* Loading state shimmer for dynamic content */
-    @keyframes contentShimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-
-    .loading-shimmer {
-      background: linear-gradient(90deg,
-        var(--bg-tertiary) 25%,
-        rgba(220, 38, 38, 0.1) 50%,
-        var(--bg-tertiary) 75%
-      );
-      background-size: 200% 100%;
-      animation: contentShimmer 1.5s infinite;
-    }
-  </style>
-
   <!-- SVG Icon Sprite -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2179,8 +1988,6 @@
   </div>
 </section>
 
-<hr class="section-divider section-divider--glow" aria-hidden="true">
-
 <!-- Multi-AI Integration Section -->
 <section id="multi-ai" class="section multi-ai-section" aria-labelledby="multi-ai-title">
   <div class="section__header" data-reveal="fade-up">
@@ -2277,8 +2084,6 @@
   </div>
 </section>
 
-<hr class="section-divider" aria-hidden="true">
-
   <!-- Installation Section -->
   <section id="installation" class="section install-section" aria-labelledby="install-title">
     <div class="section__header" data-reveal="fade-up">
@@ -2286,48 +2091,57 @@
       <p class="section__subtitle">Two simple steps and you're ready to go. No configuration needed.</p>
     </div>
 
-    <div class="install-steps" data-reveal="stagger">
-      <div class="install-step" data-reveal="fade-up">
-        <p class="install-step__label">Install the plugin</p>
-        <div class="code-block">
-          <div class="code-block__header">
-            <div class="code-block__dots">
-              <span class="code-block__dot code-block__dot--red"></span>
-              <span class="code-block__dot code-block__dot--yellow"></span>
-              <span class="code-block__dot code-block__dot--green"></span>
+    <div class="install-flow" data-reveal="stagger">
+      <div class="install-step-new" data-reveal="fade-up">
+        <div class="install-step-new__number">1</div>
+        <div class="install-step-new__content">
+          <p class="install-step__label">Install the plugin</p>
+          <div class="code-block">
+            <div class="code-block__header">
+              <div class="code-block__dots">
+                <span class="code-block__dot code-block__dot--red"></span>
+                <span class="code-block__dot code-block__dot--yellow"></span>
+                <span class="code-block__dot code-block__dot--green"></span>
+              </div>
+              <button class="code-block__copy" data-copy="/plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode" aria-label="Copy command">
+                Copy
+              </button>
             </div>
-            <button class="code-block__copy" data-copy="/plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode" aria-label="Copy command">
-              Copy
-            </button>
-          </div>
-          <div class="code-block__content">
-            <code><span class="comment"># In Claude Code, run:</span><br>/plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode<br>/plugin install oh-my-claudecode</code>
+            <div class="code-block__content">
+              <code><span class="comment"># In Claude Code, run:</span><br>
+  /plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode<br>
+  /plugin install oh-my-claudecode</code>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="install-step" data-reveal="fade-up" data-reveal-delay="100">
-        <p class="install-step__label">Run setup</p>
-        <div class="code-block">
-          <div class="code-block__header">
-            <div class="code-block__dots">
-              <span class="code-block__dot code-block__dot--red"></span>
-              <span class="code-block__dot code-block__dot--yellow"></span>
-              <span class="code-block__dot code-block__dot--green"></span>
+      <div class="install-step-new" data-reveal="fade-up" data-reveal-delay="100">
+        <div class="install-step-new__number">2</div>
+        <div class="install-step-new__content">
+          <p class="install-step__label">Run setup</p>
+          <div class="code-block">
+            <div class="code-block__header">
+              <div class="code-block__dots">
+                <span class="code-block__dot code-block__dot--red"></span>
+                <span class="code-block__dot code-block__dot--yellow"></span>
+                <span class="code-block__dot code-block__dot--green"></span>
+              </div>
+              <button class="code-block__copy" data-copy="/oh-my-claudecode:omc-setup" aria-label="Copy command">
+                Copy
+              </button>
             </div>
-            <button class="code-block__copy" data-copy="/oh-my-claudecode:omc-setup" aria-label="Copy command">
-              Copy
-            </button>
-          </div>
-          <div class="code-block__content">
-            <code>/oh-my-claudecode:omc-setup<br><span class="comment"># That's it! You're ready.</span></code>
+            <div class="code-block__content">
+              <code>/oh-my-claudecode:omc-setup<br>
+  <span class="comment"># That's it! You're ready.</span></code>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-<hr class="section-divider section-divider--glow" aria-hidden="true">
+  <div class="section-connector"></div>
 
   <!-- Features Section -->
   <section id="features" class="section features-section" aria-labelledby="features-title">
@@ -2337,55 +2151,69 @@
     </div>
 
     <div class="features-grid" data-reveal="stagger">
-      <article class="feature-card" data-reveal="fade-up">
-        <div class="feature-card__icon">
-          <svg width="24" height="24"><use href="#icon-zap"></use></svg>
+      <article class="premium-card" data-reveal="fade-up">
+        <div class="feature-card-new">
+          <div class="feature-card-new__icon">
+            <svg width="32" height="32"><use href="#icon-zap"></use></svg>
+          </div>
+          <h3 class="feature-card-new__title">Autopilot</h3>
+          <p class="feature-card-new__description">Full autonomous execution from high-level idea to working, tested code. No manual intervention required.</p>
         </div>
-        <h3 class="feature-card__title">Autopilot</h3>
-        <p class="feature-card__description">Full autonomous execution from high-level idea to working, tested code. No manual intervention required.</p>
       </article>
 
-      <article class="feature-card" data-reveal="fade-up" data-reveal-delay="100">
-        <div class="feature-card__icon">
-          <svg width="24" height="24"><use href="#icon-repeat"></use></svg>
+      <article class="premium-card" data-reveal="fade-up" data-reveal-delay="100">
+        <div class="feature-card-new">
+          <div class="feature-card-new__icon">
+            <svg width="32" height="32"><use href="#icon-repeat"></use></svg>
+          </div>
+          <h3 class="feature-card-new__title">Ralph</h3>
+          <p class="feature-card-new__description">Self-referential loop until completion with architect verification. The boulder never stops rolling.</p>
         </div>
-        <h3 class="feature-card__title">Ralph</h3>
-        <p class="feature-card__description">Self-referential loop until completion with architect verification. The boulder never stops rolling.</p>
       </article>
 
-      <article class="feature-card" data-reveal="fade-up" data-reveal-delay="200">
-        <div class="feature-card__icon">
-          <svg width="24" height="24"><use href="#icon-layers"></use></svg>
+      <article class="premium-card" data-reveal="fade-up" data-reveal-delay="200">
+        <div class="feature-card-new">
+          <div class="feature-card-new__icon">
+            <svg width="32" height="32"><use href="#icon-layers"></use></svg>
+          </div>
+          <h3 class="feature-card-new__title">Ultrawork</h3>
+          <p class="feature-card-new__description">Maximum parallelism with aggressive agent delegation. Process multiple tasks simultaneously.</p>
         </div>
-        <h3 class="feature-card__title">Ultrawork</h3>
-        <p class="feature-card__description">Maximum parallelism with aggressive agent delegation. Process multiple tasks simultaneously.</p>
       </article>
 
-      <article class="feature-card" data-reveal="fade-up" data-reveal-delay="300">
-        <div class="feature-card__icon">
-          <svg width="24" height="24"><use href="#icon-message-circle"></use></svg>
+      <article class="premium-card" data-reveal="fade-up" data-reveal-delay="300">
+        <div class="feature-card-new">
+          <div class="feature-card-new__icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h3 class="feature-card-new__title">Deep Interview</h3>
+          <p class="feature-card-new__description">Socratic questioning to clarify vague ideas before execution. Exposes hidden assumptions and measures clarity.</p>
         </div>
-        <h3 class="feature-card__title">Deep Interview</h3>
-        <p class="feature-card__description">Socratic questioning to clarify vague ideas before execution. Exposes hidden assumptions and measures clarity.</p>
       </article>
 
-      <article class="feature-card" data-reveal="fade-up" data-reveal-delay="400">
-        <div class="feature-card__icon">
-          <svg width="24" height="24"><use href="#icon-users"></use></svg>
+      <article class="premium-card" data-reveal="fade-up" data-reveal-delay="400">
+        <div class="feature-card-new">
+          <div class="feature-card-new__icon">
+            <svg width="32" height="32"><use href="#icon-users"></use></svg>
+          </div>
+          <h3 class="feature-card-new__title">Team</h3>
+          <p class="feature-card-new__description">N coordinated agents on a shared task list using Claude Code native teams. Real-time messaging and task coordination.</p>
         </div>
-        <h3 class="feature-card__title">Team</h3>
-        <p class="feature-card__description">N coordinated agents on a shared task list using Claude Code native teams. Real-time messaging and task coordination.</p>
       </article>
 
-      <article class="feature-card" data-reveal="fade-up" data-reveal-delay="500">
-        <div class="feature-card__icon">
-          <svg width="24" height="24"><use href="#icon-compass"></use></svg>
+      <article class="premium-card" data-reveal="fade-up" data-reveal-delay="500">
+        <div class="feature-card-new">
+          <div class="feature-card-new__icon">
+            <svg width="32" height="32"><use href="#icon-compass"></use></svg>
+          </div>
+          <h3 class="feature-card-new__title">Planning</h3>
+          <p class="feature-card-new__description">Strategic interview-based planning workflow. Gather requirements before diving into implementation.</p>
         </div>
-        <h3 class="feature-card__title">Planning</h3>
-        <p class="feature-card__description">Strategic interview-based planning workflow. Gather requirements before diving into implementation.</p>
       </article>
     </div>
   </section>
+
+  <div class="section-connector"></div>
 
 <!-- MCP Tools Section -->
 <section id="mcp-tools" class="section mcp-section" aria-labelledby="mcp-title">
@@ -2443,8 +2271,6 @@
     </article>
   </div>
 </section>
-
-<hr class="section-divider" aria-hidden="true">
 
   <!-- Magic Keywords Section -->
   <section class="section keywords-section" aria-labelledby="keywords-title">
@@ -2507,8 +2333,6 @@
       </table>
     </div>
   </section>
-
-<hr class="section-divider section-divider--glow" aria-hidden="true">
 
   <!-- Agent Lanes Section -->
   <section id="agents" class="section agents-section" aria-labelledby="agents-title">
@@ -2577,8 +2401,6 @@
       Plus <strong>Coordination</strong> agent: <code>critic</code> for plan challenges and critical review.
     </p>
   </section>
-
-<hr class="section-divider" aria-hidden="true">
 
   <!-- Zero Learning Curve Section -->
   <section class="section zero-curve-section" aria-labelledby="zero-curve-title">
