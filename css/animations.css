@@ -1293,4 +1293,11 @@
     opacity: 1 !important;
     animation: none !important;
   }
+
+  /* Fix hero entrance animations that start with opacity: 0 */
+  .hero-entrance {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }
