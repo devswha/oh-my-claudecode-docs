@@ -1245,3 +1245,35 @@
     transform: none;
   }
 }
+
+/* ========================================
+   Mobile Hero Fixes - Disable 3D transforms
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Stop 3D floating animation on mobile that can cause rendering issues */
+  .hero__illustration {
+    animation: none !important;
+    transform: none !important;
+    transform-style: flat !important;
+  }
+
+  .hero__illustration img {
+    transform: none !important;
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3) !important;
+  }
+
+  .hero__illustration svg {
+    transform: none !important;
+  }
+
+  /* Ensure hero text content is visible */
+  .hero__text {
+    transform: none !important;
+  }
+
+  .hero__visual {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
