@@ -1,12 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import { useTheme } from 'next-themes';
 import mermaid from 'mermaid';
+import DOMPurify from 'dompurify';
 
 export function Mermaid({ chart }: { chart: string }) {
   const { resolvedTheme } = useTheme();
   const [svg, setSvg] = useState('');
+  const reactId = useId();
 
   useEffect(() => {
     const isDark = resolvedTheme === 'dark';
@@ -15,13 +17,14 @@ export function Mermaid({ chart }: { chart: string }) {
       theme: isDark ? 'dark' : 'default',
       look: 'handDrawn',
       fontFamily: 'inherit',
+      securityLevel: 'strict',
     });
 
-    const id = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
+    const id = `mermaid-${reactId.replace(/:/g, '')}`;
     mermaid.render(id, chart.trim()).then(({ svg }) => {
-      setSvg(svg);
+      setSvg(DOMPurify.sanitize(svg, { USE_PROFILES: { svg: true } }));
     });
-  }, [chart, resolvedTheme]);
+  }, [chart, resolvedTheme, reactId]);
 
   return (
     <div
