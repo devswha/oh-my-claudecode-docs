@@ -4,8 +4,9 @@ const withMDX = createMDX();
 
 /** @type {import('next').NextConfig} */
 const config = {
+  basePath: '/docs',
   output: 'export',
-  distDir: 'dist',
+  distDir: '../docs-dist',
   turbopack: {
     root: '.',
   },
