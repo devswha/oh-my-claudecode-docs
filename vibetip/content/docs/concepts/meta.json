@@ -1,9 +1,0 @@
-{
-  "title": "Core Concepts",
-  "pages": [
-    "[Agents](#what-are-agents)",
-    "[Skills](#what-are-skills)",
-    "[Hooks](#what-are-hooks)",
-    "[State Management](#state-management-overview)"
-  ]
-}
