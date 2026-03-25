@@ -111,6 +111,22 @@
   border-color: var(--accent-color);
 }
 
+.btn--docs {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  border: none;
+  gap: 0.5rem;
+}
+
+.btn--docs:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .btn--lg {
   padding: var(--space-4) var(--space-8);
   font-size: var(--text-base);
