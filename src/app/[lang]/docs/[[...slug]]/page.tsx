@@ -7,6 +7,7 @@ import {
 import { notFound } from 'next/navigation';
 import { source } from '@/lib/source';
 import { i18n } from '@/lib/i18n';
+import { findNeighbour } from 'fumadocs-core/page-tree';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
@@ -82,10 +83,15 @@ export default async function Page(props: {
   const slugKey = params.slug?.length === 1 ? params.slug[0] : null;
   const customNav = slugKey ? anchorPageNav[slugKey] : null;
 
+  const tree = source.getPageTree(params.lang);
+  const autoNav = findNeighbour(tree, page.url);
+  const footerItems = customNav ?? autoNav;
+
   return (
     <DocsPage
       toc={page.data.toc}
-      footer={customNav ? { items: customNav } : undefined}
+      breadcrumb={{ enabled: true, includeRoot: true, includePage: true }}
+      footer={{ items: footerItems }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
