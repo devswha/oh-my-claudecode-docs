@@ -25,6 +25,14 @@ const { provider } = defineI18nUI(i18n, {
       previousPage: '上一页',
       nextPage: '下一页',
     },
+    ja: {
+      displayName: '日本語',
+      search: 'ドキュメントを検索',
+      searchNoResult: '検索結果がありません',
+      toc: '目次',
+      previousPage: '前へ',
+      nextPage: '次へ',
+    },
   },
 });
 

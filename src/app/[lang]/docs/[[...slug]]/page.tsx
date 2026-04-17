@@ -46,6 +46,13 @@ export default async function Page(props: {
       guides: '指南',
       agents: '智能体',
     },
+    ja: {
+      docs: 'ドキュメント',
+      gettingStarted: 'クイックスタート',
+      concepts: 'コアコンセプト',
+      guides: 'ガイド',
+      agents: 'エージェント',
+    },
   };
   const n = navNames[params.lang] ?? navNames.en;
 

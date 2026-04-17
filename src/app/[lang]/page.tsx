@@ -264,6 +264,85 @@ const translations = {
       },
     ],
   },
+  ja: {
+    heroSubtitle: 'Claude Code のためのマルチエージェント・オーケストレーション',
+    heroDesc: [
+      'Claude Code のためのマルチエージェント・オーケストレーションレイヤー。',
+      '19 個のエージェントと 37 個のスキルが協調して動作します。',
+    ],
+    metaTitle: 'Oh My ClaudeCode — Claude Code のマルチエージェント・オーケストレーション',
+    metaDescription:
+      'oh-my-claudecode の公式ドキュメント。Claude Code のためのマルチエージェント・オーケストレーションプラグイン。',
+    getStarted: 'はじめる',
+    viewDocs: 'ドキュメントを見る',
+    whatsDifferent: '何が違うのか？',
+    whatsDifferentDesc:
+      'Claude Code の上で動作する専門エージェントレイヤーです。',
+    features: [
+      {
+        title: '19 個の専門エージェント',
+        desc: '探索、計画、実装、検証、レビューまで、各役割に特化したエージェントが分担します。',
+        tag: 'Agents',
+      },
+      {
+        title: '37 個の自動化スキル',
+        desc: 'autopilot、ralph、ultrawork -- 一言で複雑なパイプラインを実行します。',
+        tag: 'Skills',
+      },
+      {
+        title: 'チームオーケストレーション',
+        desc: '複数の Claude エージェントを同時に起動し、タスクを分配して結果をまとめます。',
+        tag: 'Teams',
+      },
+      {
+        title: 'マジックキーワード',
+        desc: '"autopilot build me X" -- 自然言語でパイプラインを開始します。コマンドを覚える必要はありません。',
+        tag: 'Keywords',
+      },
+    ],
+    pipelineTitle: 'autopilot パイプライン',
+    pipelineDesc:
+      '一つのアイデアから、分析・設計・計画・実行・QA・検証までが自動で進行します。',
+    pipelineSteps: [
+      { label: 'アイデア', role: 'User' },
+      { label: '分析', role: 'Analyst' },
+      { label: '設計', role: 'Architect' },
+      { label: '計画', role: 'Planner' },
+      { label: '実行', role: 'Executor' },
+      { label: 'QA', role: 'UltraQA' },
+      { label: '検証', role: 'Verifier' },
+    ],
+    agentsTitle: '専門エージェント',
+    agentsDesc: '4 レーン、19 エージェント。それぞれの役割に最適化されています。',
+    viewAllAgents: 'すべてのエージェントを見る',
+    skillsTitle: '主要スキル',
+    skillsDesc: '一言で複雑なワークフローを実行します。',
+    skills: [
+      { name: 'autopilot', desc: 'アイデアから動くコードまでの自律実行。' },
+      { name: 'ralph', desc: '完了するまで止まらない実行ループ。' },
+      { name: 'team', desc: 'N 個のエージェントが同時に作業します。' },
+      { name: 'ralplan', desc: '合意に達するまで繰り返す計画。' },
+    ],
+    viewAllSkills: 'すべてのスキルを見る',
+    stepsTitle: '3 ステップではじめる',
+    steps: [
+      {
+        step: '01',
+        title: 'プラグインをインストール',
+        desc: 'Claude Code に oh-my-claudecode プラグインをインストールします。',
+      },
+      {
+        step: '02',
+        title: 'omc-setup を実行',
+        desc: '"setup omc" と入力すると、環境が自動で構成されます。',
+      },
+      {
+        step: '03',
+        title: 'autopilot を起動',
+        desc: '"autopilot build me X" と入力すれば、エージェントが動き始めます。',
+      },
+    ],
+  },
 } as const;
 
 type Lang = keyof typeof translations;
