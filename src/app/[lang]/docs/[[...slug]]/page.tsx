@@ -39,6 +39,13 @@ export default async function Page(props: {
       guides: '가이드',
       agents: '에이전트',
     },
+    zh: {
+      docs: '文档',
+      gettingStarted: '快速开始',
+      concepts: '核心概念',
+      guides: '指南',
+      agents: '智能体',
+    },
   };
   const n = navNames[params.lang] ?? navNames.en;
 

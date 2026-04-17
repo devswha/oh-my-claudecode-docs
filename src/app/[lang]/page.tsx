@@ -185,6 +185,85 @@ const translations = {
       },
     ],
   },
+  zh: {
+    heroSubtitle: 'Claude Code 的多智能体编排系统',
+    heroDesc: [
+      'Claude Code 的多智能体编排层。',
+      '19 个智能体和 37 个技能协同工作。',
+    ],
+    metaTitle: 'Oh My ClaudeCode — Claude Code 多智能体编排',
+    metaDescription:
+      'oh-my-claudecode 官方文档。Claude Code 的多智能体编排插件。',
+    getStarted: '开始使用',
+    viewDocs: '查看文档',
+    whatsDifferent: '有何不同？',
+    whatsDifferentDesc:
+      '运行在 Claude Code 之上的专业智能体层。',
+    features: [
+      {
+        title: '19 个专业智能体',
+        desc: '从探索、规划、实施到验证与审核，每个角色都由专门的智能体负责。',
+        tag: 'Agents',
+      },
+      {
+        title: '37 个自动化技能',
+        desc: 'autopilot、ralph、ultrawork -- 一句话运行复杂流水线。',
+        tag: 'Skills',
+      },
+      {
+        title: '团队编排',
+        desc: '同时启动多个 Claude 智能体，分发任务并合并结果。',
+        tag: 'Teams',
+      },
+      {
+        title: '魔法关键词',
+        desc: '"autopilot build me X" -- 用自然语言启动流水线。无需记忆命令。',
+        tag: 'Keywords',
+      },
+    ],
+    pipelineTitle: 'autopilot 流水线',
+    pipelineDesc:
+      '从一个想法出发，分析、设计、规划、执行、QA、验证全程自动化。',
+    pipelineSteps: [
+      { label: '想法', role: 'User' },
+      { label: '分析', role: 'Analyst' },
+      { label: '设计', role: 'Architect' },
+      { label: '规划', role: 'Planner' },
+      { label: '执行', role: 'Executor' },
+      { label: 'QA', role: 'UltraQA' },
+      { label: '验证', role: 'Verifier' },
+    ],
+    agentsTitle: '专业智能体',
+    agentsDesc: '4 条通路，19 个智能体。各自针对角色优化。',
+    viewAllAgents: '查看全部智能体',
+    skillsTitle: '核心技能',
+    skillsDesc: '用一个词执行复杂工作流。',
+    skills: [
+      { name: 'autopilot', desc: '从想法到代码的自主执行。' },
+      { name: 'ralph', desc: '不完成不停止的执行循环。' },
+      { name: 'team', desc: 'N 个智能体同时工作。' },
+      { name: 'ralplan', desc: '迭代规划直至达成共识。' },
+    ],
+    viewAllSkills: '查看全部技能',
+    stepsTitle: '三步开始使用',
+    steps: [
+      {
+        step: '01',
+        title: '安装插件',
+        desc: '在 Claude Code 中安装 oh-my-claudecode 插件。',
+      },
+      {
+        step: '02',
+        title: '运行 omc-setup',
+        desc: '输入 "setup omc"，环境将自动完成配置。',
+      },
+      {
+        step: '03',
+        title: '启动 autopilot',
+        desc: '输入 "autopilot build me X"，智能体就会开始工作。',
+      },
+    ],
+  },
 } as const;
 
 type Lang = keyof typeof translations;
