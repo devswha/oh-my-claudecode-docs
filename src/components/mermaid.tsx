@@ -22,7 +22,16 @@ export function Mermaid({ chart }: { chart: string }) {
 
     const id = `mermaid-${reactId.replace(/:/g, '')}`;
     mermaid.render(id, chart.trim()).then(({ svg }) => {
-      setSvg(DOMPurify.sanitize(svg, { USE_PROFILES: { svg: true } }));
+      setSvg(
+        DOMPurify.sanitize(svg, {
+          USE_PROFILES: { svg: true, svgFilters: true, html: true },
+          ADD_TAGS: ['foreignobject'],
+          HTML_INTEGRATION_POINTS: {
+            'annotation-xml': true,
+            foreignobject: true,
+          },
+        }),
+      );
     });
   }, [chart, resolvedTheme, reactId]);
 
