@@ -1,4 +1,11 @@
 {
-  "title": "Tools",
-  "pages": ["state", "notepad", "project-memory", "lsp", "ast-grep", "python-repl"]
+  "title": "工具",
+  "pages": [
+    "state",
+    "notepad",
+    "project-memory",
+    "lsp",
+    "ast-grep",
+    "python-repl"
+  ]
 }

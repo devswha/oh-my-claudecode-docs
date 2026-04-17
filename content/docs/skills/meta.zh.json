@@ -1,4 +1,7 @@
 {
-  "title": "Skills",
-  "pages": ["workflow", "utility"]
+  "title": "技能",
+  "pages": [
+    "workflow",
+    "utility"
+  ]
 }

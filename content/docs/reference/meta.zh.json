@@ -1,4 +1,9 @@
 {
-  "title": "Reference",
-  "pages": ["configuration", "quick-commands", "environment", "changelog"]
+  "title": "参考",
+  "pages": [
+    "configuration",
+    "quick-commands",
+    "environment",
+    "changelog"
+  ]
 }

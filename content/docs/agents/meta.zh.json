@@ -1,4 +1,9 @@
 {
-  "title": "Agents",
-  "pages": ["build-analysis", "review", "domain", "coordination"]
+  "title": "智能体",
+  "pages": [
+    "build-analysis",
+    "review",
+    "domain",
+    "coordination"
+  ]
 }

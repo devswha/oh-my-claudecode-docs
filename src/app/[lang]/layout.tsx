@@ -17,6 +17,14 @@ const { provider } = defineI18nUI(i18n, {
       previousPage: '이전',
       nextPage: '다음',
     },
+    zh: {
+      displayName: '中文',
+      search: '搜索文档',
+      searchNoResult: '无搜索结果',
+      toc: '目录',
+      previousPage: '上一页',
+      nextPage: '下一页',
+    },
   },
 });
 
