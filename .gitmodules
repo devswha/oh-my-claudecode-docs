@@ -1,0 +1,3 @@
+[submodule "content/docs"]
+	path = content/docs
+	url = https://github.com/devswha/oh-my-claudecode-docs
