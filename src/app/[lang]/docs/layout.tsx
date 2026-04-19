@@ -12,6 +12,12 @@ export default async function Layout({
 }) {
   const { lang } = await params;
 
+  const supportLabel =
+    ({ en: 'Support', ko: '지원', ja: 'サポート', zh: '支持' } as const)[
+      lang as 'en' | 'ko' | 'ja' | 'zh'
+    ] ?? 'Support';
+  const langPrefix = lang === i18n.defaultLanguage ? '' : `/${lang}`;
+
   return (
     <DocsLayout
       tree={source.getPageTree(lang)}
@@ -33,6 +39,27 @@ export default async function Layout({
           text: 'GitHub',
           url: 'https://github.com/Yeachan-Heo/oh-my-claudecode',
           external: true,
+        },
+        {
+          type: 'icon',
+          text: supportLabel,
+          url: `${langPrefix}/docs/support`,
+          icon: (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <path d="M12 17h.01" />
+            </svg>
+          ),
         },
       ]}
     >

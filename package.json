@@ -10,6 +10,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^1.5.0",
+    "@octokit/rest": "^22.0.1",
+    "@orama/tokenizers": "^3.1.18",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/dompurify": "^3.0.5",
     "@types/mdx": "^2.0.0",
@@ -21,7 +24,8 @@
     "mermaid": "^11.13.0",
     "next": "^16.2.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
