@@ -14,7 +14,6 @@
     "@types/dompurify": "^3.0.5",
     "@types/mdx": "^2.0.0",
     "@vercel/analytics": "^2.0.1",
-    "@vercel/speed-insights": "^2.0.0",
     "dompurify": "^3.3.3",
     "fumadocs-core": "^16.6.0",
     "fumadocs-mdx": "^14.2.0",

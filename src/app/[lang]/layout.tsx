@@ -1,7 +1,6 @@
 import { RootProvider } from 'fumadocs-ui/provider/next';
 import { defineI18nUI } from 'fumadocs-ui/i18n';
 import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { i18n } from '@/lib/i18n';
 import type { ReactNode } from 'react';
 
@@ -55,7 +54,6 @@ export default async function LangLayout({
       <body>
         <RootProvider i18n={provider(lang)}>{children}</RootProvider>
         <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
