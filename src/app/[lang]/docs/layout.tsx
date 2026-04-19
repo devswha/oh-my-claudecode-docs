@@ -1,4 +1,5 @@
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
+import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { source } from '@/lib/source';
 import { i18n } from '@/lib/i18n';
@@ -23,9 +24,19 @@ export default async function Layout({
       tree={source.getPageTree(lang)}
       nav={{
         title: (
-          <div className="flex flex-col">
-            <span>Oh My ClaudeCode</span>
-            <span className="text-xs text-fd-muted-foreground">v4.12.0</span>
+          <div className="flex items-center gap-2">
+            <Image
+              src="/logo.png"
+              alt="OMC"
+              width={28}
+              height={26}
+              priority
+              className="shrink-0"
+            />
+            <div className="flex flex-col">
+              <span>Oh My ClaudeCode</span>
+              <span className="text-xs text-fd-muted-foreground">v4.12.0</span>
+            </div>
           </div>
         ),
         url: lang === i18n.defaultLanguage ? '/docs' : `/${lang}/docs`,
