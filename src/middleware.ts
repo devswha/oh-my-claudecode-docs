@@ -4,5 +4,9 @@ import { i18n } from '@/lib/i18n';
 export default createI18nMiddleware(i18n);
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  // Skip i18n rewrites for static assets served from /public.
+  // Without this, /logo.png gets rewritten to /en/logo.png and 404s.
+  matcher: [
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:png|svg|ico|webp|jpg|jpeg|gif|txt|xml|json|woff2?|ttf)).*)',
+  ],
 };
