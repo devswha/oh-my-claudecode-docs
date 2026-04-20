@@ -1,32 +1,33 @@
-# oh-my-claudecode Website
+# oh-my-claudecode docs
 
-## Structure
+Documentation site for [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) — a multi-agent orchestration layer for Claude Code.
 
-```
-├── index.html          # Main landing page (original 3D design)
-├── css/                # Stylesheets for main site
-├── js/                 # JavaScript for main site
-├── data/               # Data files
-├── docs/               # Legacy documentation (original docs.html)
-└── assets/             # Images and media
-```
+Built with **Next.js** + **Fumadocs**. Deployed on Vercel.
 
-## Deployment
+## Dev
 
-### Main Site (GitHub Pages)
-The main site at root is a static HTML/CSS/JS site deployed to GitHub Pages.
-
-### Docs Site
-Documentation is hosted separately at [omc.vibetip.help](https://omc.vibetip.help/)
-
-## Navigation
-
-- **Main site**: Links to `omc.vibetip.help` for documentation
-- **Legacy docs**: Available at `/docs/index.html` (original documentation)
-
-## Development
-
-Just open `index.html` in a browser or serve with any static server.
 ```bash
-npx serve .
+npm install
+npm run dev
+```
+
+## Content
+
+All docs live in [`content/docs/`](./content/docs/) as MDX. Sidebar
+order is driven by per-directory `meta.json` files.
+
+## Translations
+
+See [`docs/CONTRIBUTING-TRANSLATIONS.md`](./docs/CONTRIBUTING-TRANSLATIONS.md)
+for the file-naming convention, glossary, and PR flow.
+
+## Layout
+
+```
+content/docs/           MDX content (feeds the docs site)
+src/app/                Next.js app (landing + docs routes)
+src/components/         Shared React components
+public/                 Static assets
+.github/workflows/      CI (incl. upstream-drift check)
+docs/                   Repo-maintainer docs (not published to site)
 ```
