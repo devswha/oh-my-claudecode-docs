@@ -1,0 +1,9 @@
+{
+  "title": "核心概念",
+  "pages": [
+    "[智能体](/docs/concepts#什么是智能体)",
+    "[技能](/docs/concepts#什么是技能)",
+    "[钩子](/docs/concepts#什么是钩子)",
+    "[状态管理](/docs/concepts#状态管理概述)"
+  ]
+}
