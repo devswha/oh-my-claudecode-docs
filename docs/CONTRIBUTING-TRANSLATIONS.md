@@ -141,7 +141,7 @@ correct for Japanese; `## オートパイロットの設定` is not.
 
 ## Questions / stuck?
 
-Open an issue in this repo or ping a maintainer. For the website code,
-the Next.js setup, or build problems, file on the
-[website repo](https://github.com/devswha/oh-my-claudecode-website/issues)
-instead.
+Open an issue in
+[this repo](https://github.com/devswha/oh-my-claudecode-docs/issues)
+or ping a maintainer. Content and website code now live in the same
+monorepo, so there is no longer a separate place to file build issues.
