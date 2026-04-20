@@ -6,11 +6,11 @@ is enough to submit a PR without installing Node.js or running a build.
 ## Quick start (GitHub web UI only)
 
 1. Find the English file you want to translate, e.g.
-   [`skills/utility/hud.mdx`](./skills/utility/hud.mdx).
+   [`content/docs/skills/utility/hud.mdx`](../content/docs/skills/utility/hud.mdx).
 2. Click the pencil icon on GitHub to edit. GitHub will ask you to
    fork; accept.
 3. **Rename** the file to add the locale suffix before `.mdx`:
-   - `skills/utility/hud.mdx` → `skills/utility/hud.es.mdx`
+   - `content/docs/skills/utility/hud.mdx` → `content/docs/skills/utility/hud.es.mdx`
    - (Use the "Rename" option when editing the file.)
 4. Replace the content with your translation, following the glossary
    below.
@@ -122,8 +122,8 @@ For most directories, the `meta.{locale}.json` is a near-clone of
 must stay identical so the sidebar tree lines up.
 
 **Three exceptions**:
-[`getting-started/`](./getting-started/),
-[`concepts/`](./concepts/), and [`guides/`](./guides/). These are
+[`getting-started/`](../content/docs/getting-started/),
+[`concepts/`](../content/docs/concepts/), and [`guides/`](../content/docs/guides/). These are
 single-page sections where `pages` is a list of
 `[label](#anchor)` entries referencing in-page H2 headings. For these,
 **both** the label AND the anchor must match your locale's H2 text,
