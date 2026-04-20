@@ -5,6 +5,12 @@
 OMC documentation site without damaging the existing visual design.
 **Repos touched:** `oh-my-claudecode-docs` (content), `oh-my-claudecode-website` (Next.js + Fumadocs app).
 
+> **Historical note (2026-04-20):** The two repos described below were
+> consolidated into a single monorepo and the Next.js app repo was
+> renamed from `oh-my-claudecode-website` to `oh-my-claudecode-docs`.
+> References to the two-repo split are preserved as-authored to keep
+> the design rationale intact.
+
 ## 1. Goals & Non-Goals
 
 **Goals**
