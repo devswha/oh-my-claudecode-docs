@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { source } from '@/lib/source';
 import { i18n } from '@/lib/i18n';
+import { OMC_VERSION } from '@/lib/version';
 
 export default async function Layout({
   params,
@@ -24,7 +25,7 @@ export default async function Layout({
       tree={source.getPageTree(lang)}
       nav={{
         title: (
-          <div className="flex items-center gap-2">
+          <div key="docs-nav-title" className="flex items-center gap-2">
             <Image
               src="/logo.png"
               alt="OMC"
@@ -35,7 +36,7 @@ export default async function Layout({
             />
             <div className="flex flex-col">
               <span>Oh My ClaudeCode</span>
-              <span className="text-xs text-fd-muted-foreground">v4.12.0</span>
+              <span className="text-xs text-fd-muted-foreground">v{OMC_VERSION}</span>
             </div>
           </div>
         ),

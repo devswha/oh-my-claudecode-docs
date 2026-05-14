@@ -1,12 +1,39 @@
+import { existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createMDX } from 'fumadocs-mdx/next';
 
 const withMDX = createMDX();
+const configDir = dirname(fileURLToPath(import.meta.url));
+
+function resolveTurbopackRoot(startDir) {
+  let current = startDir;
+
+  while (true) {
+    if (existsSync(join(current, 'node_modules/next/package.json'))) {
+      return current;
+    }
+
+    const parent = dirname(current);
+    if (parent === current) {
+      return startDir;
+    }
+
+    current = parent;
+  }
+}
 
 /** @type {import('next').NextConfig} */
 const config = {
   turbopack: {
-    root: '.',
+    root: resolveTurbopackRoot(configDir),
   },
+  allowedDevOrigins: [
+    'home-server',
+    'home-server.tail1e211e.ts.net',
+    '100.123.228.51',
+    '192.168.0.61',
+  ],
   async headers() {
     return [
       {
